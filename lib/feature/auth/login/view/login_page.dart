@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'welocme Back',
+                  'Welocme Back',
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
@@ -56,30 +56,14 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 45.0,
                 ),
-                SizedBox(
-                  height: 50.0,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      isCollapsed: true,
-                      // contentPadding: const EdgeInsets.all(15.0),
-                      label: const Text('Email / Phone Num.'),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                  ),
+                const CustomTextField(
+                  label: 'Email / Mobile No',
                 ),
                 const SizedBox(
-                  height: 15.0,
+                  height: 20.0,
                 ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.all(15.0),
-                    label: const Text('Password'),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
+                const CustomTextField(
+                  label: 'Password',
                 ),
                 const SizedBox(
                   height: 35.0,

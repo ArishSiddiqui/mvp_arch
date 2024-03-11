@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_arch/core/const/color_const.dart';
+import 'config/navigation/navigator.dart';
 import 'core/const/app_const.dart';
 import 'core/networkChecker/network_checker.dart';
-import 'feature/auth/login/view/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +34,8 @@ class _MyAppState extends State<MyApp> {
         ),
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      initialRoute: AppPages.login,
+      routes: AppRoutes.routes,
     );
   }
 }

@@ -1,6 +1,6 @@
 extension StringExtension on String {
   bool isValidMobileNum() {
-    return RegExp(r'[0-9]{10}').hasMatch(this);
+    return RegExp(r'^[0-9]{10}$').hasMatch(this);
   }
 
   bool isValidEmail() {

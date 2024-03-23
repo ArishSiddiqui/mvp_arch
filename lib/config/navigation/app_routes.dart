@@ -6,7 +6,7 @@ import 'app_navigation.dart';
 
 class AppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
-    AppPages.login: (context) => const LoginPage(),
+    AppPages.login: (context) => LoginPage(),
     AppPages.signUp: (context) => const SignUpPage(),
   };
 }

@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mvp_arch/feature/auth/signUp/presentor/sign_up_state.dart';
+
+import 'sign_up_state.dart';
 
 class SignUpStateNotifier extends StateNotifier<SignUpState> {
   SignUpStateNotifier() : super(const SignUpState());

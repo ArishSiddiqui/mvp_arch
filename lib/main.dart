@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_arch/core/const/color_const.dart';
 import 'config/navigation/navigator.dart';
 import 'core/const/app_const.dart';
+import 'core/const/color_const.dart';
 import 'core/networkChecker/network_checker.dart';
 
 void main() {

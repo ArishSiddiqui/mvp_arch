@@ -6,8 +6,8 @@ import '../../../../core/const/color_const.dart';
 import '../../../../core/custom/custom.dart';
 import '../../../../core/networkChecker/internet_builder.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Welocme Back',
+                  'Sign Up',
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
@@ -35,16 +35,16 @@ class LoginPage extends StatelessWidget {
                     ),
                     children: [
                       const TextSpan(
-                        text: 'New User? ',
+                        text: 'Already have an account? ',
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
                       TextSpan(
-                        text: 'Create an Account',
+                        text: 'Login',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            Head.off(AppPages.signUp);
+                            Head.back();
                           },
                         style: const TextStyle(
                           color: ColorsConst.purple,
@@ -58,6 +58,12 @@ class LoginPage extends StatelessWidget {
                   height: 45.0,
                 ),
                 const CustomTextField(
+                  label: 'Name',
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                const CustomTextField(
                   label: 'Email / Mobile No',
                 ),
                 const SizedBox(
@@ -67,10 +73,17 @@ class LoginPage extends StatelessWidget {
                   label: 'Password',
                 ),
                 const SizedBox(
+                  height: 20.0,
+                ),
+                const CustomTextField(
+                  label: 'Re-enter Password',
+                ),
+                const SizedBox(
                   height: 35.0,
                 ),
                 CustomButton(
-                  name: 'Login',
+                  // disable: true,
+                  name: 'Sign Up',
                   onTap: () {},
                 ),
               ],

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'config/navigation/navigator.dart';
 import 'core/const/app_const.dart';
 import 'core/const/color_const.dart';
 import 'core/networkChecker/network_checker.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(child: MyApp()),
+  );
 }
 
 class MyApp extends StatefulWidget {

@@ -4,3 +4,5 @@ final GlobalKey<ScaffoldMessengerState> messangerKey =
     GlobalKey<ScaffoldMessengerState>();
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
+enum ApiStatus { initial, loading, success, error }

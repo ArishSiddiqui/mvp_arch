@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mvp_arch/core/const/app_const.dart';
 
+import '../../../../core/const/app_const.dart';
 import 'login_state.dart';
 
 class LoginStateNotifier extends StateNotifier<LoginState> {

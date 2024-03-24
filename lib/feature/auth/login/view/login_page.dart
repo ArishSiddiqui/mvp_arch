@@ -1,18 +1,23 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mvp_arch/core/const/app_const.dart';
-import 'package:mvp_arch/feature/auth/login/presentor/login_riverpod.dart';
 
+import '../../../../core/const/app_const.dart';
 import '../../../../core/extensions/custom_extensions.dart';
 import '../../../../config/navigation/navigator.dart';
 import '../../../../core/const/color_const.dart';
 import '../../../../core/custom/custom.dart';
 import '../../../../core/networkChecker/internet_builder.dart';
+import '../presentor/login_riverpod.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> loginKey = GlobalKey<FormState>();
   final TextEditingController credController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();

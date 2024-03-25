@@ -5,6 +5,7 @@ import '../../core/const/app_const.dart';
 class AppPages {
   static const String login = '/';
   static const String signUp = '/signUp';
+  static const String home = '/home';
 }
 
 class Head {

@@ -1,21 +1,27 @@
 import 'package:equatable/equatable.dart';
+import 'package:mvp_arch/core/const/app_const.dart';
 
 class SignUpState extends Equatable {
-  final bool loading;
+  final ApiStatus status;
+  final bool isAccepted;
   const SignUpState({
-    this.loading = false,
+    this.status = ApiStatus.initial,
+    this.isAccepted = false,
   });
 
   SignUpState copywith({
-    bool? loading,
+    ApiStatus? status,
+    bool? isAccepted,
   }) {
     return SignUpState(
-      loading: loading ?? this.loading,
+      status: status ?? this.status,
+      isAccepted: isAccepted ?? this.isAccepted,
     );
   }
 
   @override
   List<Object?> get props => [
-    loading,
+    status,
+    isAccepted,
   ];
 }

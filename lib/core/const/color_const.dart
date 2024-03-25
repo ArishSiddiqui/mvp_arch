@@ -7,4 +7,5 @@ class ColorsConst {
   static const Color purple = Color(0xff7c2cdd);
   static const Color lightPurple = Color(0xffc03cf0);
   static const Color disabledGrey = Color(0xffC3CAD9);
+  static const Color black = Colors.black;
 }

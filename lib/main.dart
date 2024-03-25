@@ -27,6 +27,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    final mQ = MediaQuery.of(context);
+    screenHeight = mQ.size.height;
+    screenHeight = mQ.size.width;
+    pendingScreenHeight = mQ.size.height - (mQ.viewPadding.top + kBottomNavigationBarHeight);
     return MaterialApp(
       title: 'Flutter Demo',
       scaffoldMessengerKey: messangerKey,

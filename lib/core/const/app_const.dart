@@ -6,3 +6,7 @@ final GlobalKey<ScaffoldMessengerState> messangerKey =
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 enum ApiStatus { initial, loading, success, error }
+
+double? screenHeight;
+double? pendingScreenHeight;
+double? screenWidth;

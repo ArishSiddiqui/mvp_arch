@@ -5,8 +5,10 @@ import 'sign_up_state.dart';
 class SignUpStateNotifier extends StateNotifier<SignUpState> {
   SignUpStateNotifier() : super(const SignUpState());
 
-  void setName(String name) {
-    state = state.copywith();
+  void updateAccepted(bool? value) {
+    state = state.copywith(
+      isAccepted: value,
+    );
   }
 }
 

@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../injection_container.dart';
 import 'sign_up_state.dart';
 
 class SignUpStateNotifier extends StateNotifier<SignUpState> {
@@ -13,5 +14,5 @@ class SignUpStateNotifier extends StateNotifier<SignUpState> {
 }
 
 final signUpProvider = StateNotifierProvider<SignUpStateNotifier, SignUpState>(
-  (ref) => SignUpStateNotifier(),
+  (ref) => sl<SignUpStateNotifier>(),
 );

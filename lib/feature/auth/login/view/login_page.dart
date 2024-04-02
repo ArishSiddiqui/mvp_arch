@@ -43,19 +43,18 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
+                        color: ColorsConst.white,
                       ),
                     ),
                     RichText(
                       text: TextSpan(
                         style: const TextStyle(
                           fontSize: 12.5,
+                          color: ColorsConst.white,
                         ),
                         children: [
                           const TextSpan(
                             text: 'New User? ',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
                           ),
                           TextSpan(
                             text: 'Create an Account',

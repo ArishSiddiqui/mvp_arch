@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_arch/core/const/color_const.dart';
 
 class CustomTextField extends StatefulWidget {
   final String label;
@@ -24,12 +25,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
       controller: widget.controller,
       validator: widget.validator,
       onChanged: widget.onChanged,
+      style: const TextStyle(
+        color: ColorsConst.white,
+      ),
       decoration: InputDecoration(
         isCollapsed: true,
         contentPadding: const EdgeInsets.all(12.0),
-        label: Text(widget.label),
+        label: Text(
+          widget.label,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
+          borderSide: const BorderSide(
+            color: ColorsConst.white,
+          ),
         ),
       ),
     );

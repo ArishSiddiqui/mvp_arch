@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../config/navigation/navigator.dart';
 import '../../../../core/const/app_const.dart';
+import '../../../../injection_container.dart';
 import 'login_state.dart';
 
 class LoginStateNotifier extends StateNotifier<LoginState> {
@@ -23,5 +24,5 @@ class LoginStateNotifier extends StateNotifier<LoginState> {
 }
 
 final loginProvider = StateNotifierProvider<LoginStateNotifier, LoginState>(
-  (ref) => LoginStateNotifier(),
+  (ref) => sl<LoginStateNotifier>(),
 );

@@ -10,3 +10,5 @@ enum ApiStatus { initial, loading, success, error }
 double? screenHeight;
 double? pendingScreenHeight;
 double? screenWidth;
+
+const String baseUrl = 'https://dattebayo-api.onrender.com';

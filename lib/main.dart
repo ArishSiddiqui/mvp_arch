@@ -4,8 +4,10 @@ import 'config/navigation/navigator.dart';
 import 'core/const/app_const.dart';
 import 'core/const/color_const.dart';
 import 'core/networkChecker/network_checker.dart';
+import 'injection_container.dart' as di;
 
-void main() {
+void main() async {
+  await di.init();
   runApp(
     const ProviderScope(child: MyApp()),
   );
@@ -30,19 +32,21 @@ class _MyAppState extends State<MyApp> {
     final mQ = MediaQuery.of(context);
     screenHeight = mQ.size.height;
     screenHeight = mQ.size.width;
-    pendingScreenHeight = mQ.size.height - (mQ.viewPadding.top + kBottomNavigationBarHeight);
+    pendingScreenHeight =
+        mQ.size.height - (mQ.viewPadding.top + kBottomNavigationBarHeight);
     return MaterialApp(
       title: 'Flutter Demo',
       scaffoldMessengerKey: messangerKey,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: ColorsConst.black90,
         colorScheme: ColorScheme.fromSeed(
           seedColor: ColorsConst.purple,
         ),
         useMaterial3: true,
       ),
       navigatorKey: navigatorKey,
-      initialRoute: AppPages.login,
+      initialRoute: AppPages.home,
       routes: AppRoutes.routes,
     );
   }

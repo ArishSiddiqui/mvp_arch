@@ -10,17 +10,25 @@ import '../../../../core/custom/custom.dart';
 import '../../../../core/networkChecker/internet_builder.dart';
 import '../presentor/login_riverpod.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  ConsumerState<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends ConsumerState<LoginPage> {
   final GlobalKey<FormState> loginKey = GlobalKey<FormState>();
   final TextEditingController credController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  @override
+  initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(loginProvider.notifier).checkLoggedIn();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

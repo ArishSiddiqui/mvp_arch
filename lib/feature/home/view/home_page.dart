@@ -71,7 +71,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                     ),
                     itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: () => ref.read(homeProvider.notifier).updateActiveTab(index),
+                        onTap: () => ref
+                            .read(homeProvider.notifier)
+                            .updateActiveTab(index),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,

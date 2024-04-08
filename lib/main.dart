@@ -7,6 +7,7 @@ import 'core/networkChecker/network_checker.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await di.init();
   runApp(
     const ProviderScope(child: MyApp()),
@@ -46,7 +47,7 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       navigatorKey: navigatorKey,
-      initialRoute: AppPages.home,
+      // initialRoute: AppPages.home,
       routes: AppRoutes.routes,
     );
   }

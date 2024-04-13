@@ -10,4 +10,5 @@ class ColorsConst {
   static const Color black = Colors.black;
   static const Color black90 = Color(0xff0C0314);
   static const Color gold = Color(0xffFFD700);
+  static const Color gradientGrey = Color(0xff1F1F1F);
 }

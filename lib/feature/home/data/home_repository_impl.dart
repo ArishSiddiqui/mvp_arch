@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:mvp_arch/core/error/exceptions.dart';
 import 'package:mvp_arch/feature/home/data/home_data_source.dart';
 
@@ -17,6 +18,8 @@ class HomeRepositoryImpl implements HomeRepository {
       final characters = await dataSource.fetchCharacters();
       return Right(characters);
     } on ServerException catch (e) {
+      return Left(ServerFailure(e.message));
+    } on DioException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
       return Left(ServerFailure(e.toString()));

@@ -6,6 +6,7 @@ class AppPages {
   static const String login = '/';
   static const String signUp = '/signUp';
   static const String home = '/home';
+  static const String detail = '/detail';
 }
 
 class Head {

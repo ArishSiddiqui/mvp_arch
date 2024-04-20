@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     final mQ = MediaQuery.of(context);
     screenHeight = mQ.size.height;
-    screenHeight = mQ.size.width;
+    screenWidth = mQ.size.width;
     pendingScreenHeight =
         mQ.size.height - (mQ.viewPadding.top + kBottomNavigationBarHeight);
     return MaterialApp(
@@ -48,7 +48,8 @@ class _MyAppState extends State<MyApp> {
       ),
       navigatorKey: navigatorKey,
       // initialRoute: AppPages.home,
-      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.generateRoute,
+      // routes: AppRoutes.routes,
     );
   }
 }

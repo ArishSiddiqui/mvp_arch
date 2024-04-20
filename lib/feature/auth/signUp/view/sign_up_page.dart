@@ -10,10 +10,15 @@ import '../../../../core/networkChecker/internet_builder.dart';
 import '../presentor/sign_up_riverpod.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+  final String eamilOrNumber;
+  const SignUpPage({
+    required this.eamilOrNumber,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
+    CustomLogger.p(eamilOrNumber);
     return Scaffold(
       body: SafeArea(
         child: InternetBuilder(
@@ -34,6 +39,7 @@ class SignUpPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
+                          color: ColorsConst.white,
                         ),
                       ),
                       RichText(
@@ -45,7 +51,7 @@ class SignUpPage extends StatelessWidget {
                             const TextSpan(
                               text: 'Already have an account? ',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: ColorsConst.white,
                               ),
                             ),
                             TextSpan(
@@ -92,8 +98,7 @@ class SignUpPage extends StatelessWidget {
                       Row(
                         children: [
                           Checkbox(
-                            side: const
-                             BorderSide(
+                            side: const BorderSide(
                               color: ColorsConst.disabledGrey,
                               width: 2.0,
                             ),
@@ -109,7 +114,7 @@ class SignUpPage extends StatelessWidget {
                             text: const TextSpan(
                               style: TextStyle(
                                 fontSize: 12.0,
-                                color: ColorsConst.black,
+                                color: ColorsConst.white,
                               ),
                               children: [
                                 TextSpan(

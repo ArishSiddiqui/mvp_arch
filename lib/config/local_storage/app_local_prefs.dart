@@ -6,11 +6,13 @@ class AppLocalPrefs {
     required this.sP,
   });
 
+  // Keys
   final String gmail = 'gmail';
   final String password = 'password';
   final String loggedInAt = 'loggedInAt';
   final String isLoggedIn = 'isLoggedIn';
 
+  // Methods
   String? get getGmail => sP.getString(gmail);
   set storeGmail(String value) => sP.setString(gmail, value);
 

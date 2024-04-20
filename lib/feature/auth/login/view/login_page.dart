@@ -68,7 +68,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                             text: 'Create an Account',
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                Head.to(AppPages.signUp);
+                                Head.to(
+                                  AppPages.signUp,
+                                  arguments: 'XYZ',
+                                );
                               },
                             style: const TextStyle(
                               color: ColorsConst.purple,

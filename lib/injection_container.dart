@@ -5,6 +5,7 @@ import 'package:mvp_arch/feature/home/data/home_repository_impl.dart';
 import 'package:mvp_arch/feature/home/presentor/home_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'config/dio/dio_config.dart';
 import 'feature/auth/signUp/presentor/sign_up_riverpod.dart';
 import 'feature/auth/login/presentor/login_riverpod.dart';
 import 'feature/home/presentor/home_riverpod.dart';
@@ -39,7 +40,9 @@ Future<void> init() async {
 
   // Data Source
   sl.registerLazySingleton<HomeDataSource>(
-    () => HomeDataSourceImpl(),
+    () => HomeDataSourceImpl(
+      dioClient: sl(),
+    ),
   );
 
   // Config
@@ -47,6 +50,11 @@ Future<void> init() async {
     () => AppLocalPrefs(
       sP: sl(),
     ),
+  );
+
+  // Internal
+  sl.registerLazySingleton(
+    () => DioClient(),
   );
 
   // External

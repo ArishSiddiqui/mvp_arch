@@ -1,3 +1,4 @@
+import '../../../config/dio/dio_config.dart';
 import '../../../core/const/app_const.dart';
 import '../../../core/custom/custom.dart';
 import '../../../core/error/exceptions.dart';
@@ -9,11 +10,15 @@ abstract class HomeDataSource {
 }
 
 class HomeDataSourceImpl implements HomeDataSource {
-  final Dio _dio = Dio();
+  final DioClient dioClient;
+  HomeDataSourceImpl({
+    required this.dioClient,
+  });
+
   @override
   Future<List<CharacterModel>> fetchCharacters() async {
     List<CharacterModel> allCharacters = <CharacterModel>[];
-    final response = await _dio.request(
+    final response = await dioClient.dio.request(
       '$baseUrl/characters',
       options: Options(
         method: 'GET',

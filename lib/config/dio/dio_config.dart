@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
@@ -19,14 +21,30 @@ class DioClient {
       InterceptorsWrapper(
         onRequest: (options, handler) {
           // Add headers
-          options.headers['Content-Type'] = 'application/json';
+          // options.headers['Content-Type'] = 'application/json';
           // You can add other default headers here as well
           if (!kReleaseMode) {
             CustomLogger.p("---Request---");
             CustomLogger.p(options.path, message: "Path");
             CustomLogger.pP(options.headers, message: "Headers");
             CustomLogger.p(options.method, message: "Method");
-            CustomLogger.pP(options.data, message: "Data Sent");
+            if (options.data is FormData) {
+              final formData = options.data as FormData;
+              CustomLogger.p("---FormData Sent---");
+              for (final entry in formData.fields) {
+                CustomLogger.p("${entry.key}: ${entry.value}");
+              }
+              for (final file in formData.files) {
+                final multipartFile = file.value;
+                CustomLogger.p("File field: ${file.key}");
+                CustomLogger.p("Filename: ${multipartFile.filename}");
+              }
+            } else {
+              CustomLogger.pP(
+                options.data == null ? null : json.decode(options.data),
+                message: "Data Sent",
+              );
+            }
           }
           return handler.next(options); // Continue with the request
         },

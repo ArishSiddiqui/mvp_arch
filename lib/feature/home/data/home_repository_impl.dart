@@ -20,6 +20,12 @@ class HomeRepositoryImpl implements HomeRepository {
     } on ServerException catch (e) {
       return Left(ServerFailure(e.message));
     } on DioException catch (e) {
+      if (e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout) {
+        return const Left(
+          ServerFailure('Connection timed out. Please try again.'),
+        );
+      }
       return Left(ServerFailure(e.message));
     } catch (e) {
       return Left(ServerFailure(e.toString()));
